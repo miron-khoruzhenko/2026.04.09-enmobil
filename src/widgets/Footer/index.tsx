@@ -1,15 +1,16 @@
+import { SITE_CONFIG } from "@/shared/config";
+
 export const Footer = () => {
   return (
     <footer className="bg-brand-dark text-white pt-20 pb-10 border-t-4 border-brand-red">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
         <div className="space-y-4">
           <div className="flex flex-col leading-none">
-            <span className="text-2xl font-black tracking-tight text-white">ENMOBİL</span>
+            <span className="text-2xl font-black tracking-tight text-white">{SITE_CONFIG.name.toUpperCase()}</span>
             <span className="text-xs uppercase font-bold tracking-widest text-brand-red">Sigorta</span>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-            35 yıllık tecrübemizle, hayatın beklenmedik sürprizlerine karşı 
-            sizi ve sevdiklerinizi güvence altına alıyoruz.
+            {SITE_CONFIG.description}
           </p>
         </div>
 
@@ -37,15 +38,15 @@ export const Footer = () => {
         <div>
           <h4 className="font-bold text-lg mb-4">İletişim</h4>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li>444 0 000</li>
-            <li>info@enmobil.com.tr</li>
-            <li>Levent Mah. Büyükdere Cad. No:1 Şişli/İstanbul</li>
+            <li>{SITE_CONFIG.contact.phoneDisplay}</li>
+            <li>{SITE_CONFIG.contact.email}</li>
+            <li>{SITE_CONFIG.contact.address}</li>
           </ul>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-        <p>© 2026 Enmobil Sigorta Araçılık Hizmetleri. Tüm Hakları Saklıdır.</p>
+        <p>© 2026 {SITE_CONFIG.companyName}. Tüm Hakları Saklıdır.</p>
         <div className="flex gap-4 mt-4 md:mt-0">
           <a href="#" className="hover:text-white transition-colors">Gizlilik Politikası</a>
           <a href="#" className="hover:text-white transition-colors">Kullanım Şartları</a>

@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "@/shared/components/Button";
 import { MapPin, Phone, Mail } from "lucide-react";
+import { SITE_CONFIG } from "@/shared/config";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,7 +36,7 @@ export const Contact = () => {
       <div className="absolute inset-0 z-0 pointer-events-none">
         <iframe 
           title="Ofis Konumu"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192697.79327421862!2d28.871752837330545!3d41.005495809794354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1ccfe98bc01b0d0!2sIstanbul%2C%20T%C3%BCrkiye!5e0!3m2!1str!2sus!4v1713000000000!5m2!1str!2sus" 
+          src={SITE_CONFIG.contact.mapUrl} 
           className="w-full h-full border-0 grayscale opacity-40 mix-blend-multiply pointer-events-none" 
           loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"
@@ -61,7 +62,7 @@ export const Contact = () => {
               </div>
               <div>
                 <div className="text-sm font-bold text-brand-dark">Genel Müdürlük</div>
-                <div className="text-gray-500 text-sm">Levent, Büyükdere Cd. No:195, 34394 Şişli/İstanbul</div>
+                <div className="text-gray-500 text-sm">{SITE_CONFIG.contact.address}</div>
               </div>
             </div>
             
@@ -71,7 +72,7 @@ export const Contact = () => {
               </div>
               <div>
                 <div className="text-sm font-bold text-brand-dark">Telefon</div>
-                <div className="text-gray-500 text-sm">0850 123 45 67</div>
+                <div className="text-gray-500 text-sm">{SITE_CONFIG.contact.phoneDisplay}</div>
               </div>
             </div>
 
@@ -81,7 +82,7 @@ export const Contact = () => {
               </div>
               <div>
                 <div className="text-sm font-bold text-brand-dark">E-Posta</div>
-                <div className="text-gray-500 text-sm">destek@enmobil.com.tr</div>
+                <div className="text-gray-500 text-sm">{SITE_CONFIG.contact.email}</div>
               </div>
             </div>
           </div>

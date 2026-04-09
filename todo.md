@@ -1,0 +1,10 @@
+- analytics (google analytics, hotjar, etc.)
+- all settings (seo, social media, etc.) to json
+- define meta tags for each page
+- define schema for each page
+- create sitemap
+- create robots.txt
+- change site icon and name
+- add cookie consent banner
+- add other pages (about, contact, etc.)
+- add preview for links

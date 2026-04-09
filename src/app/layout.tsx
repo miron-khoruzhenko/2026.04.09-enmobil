@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import { Preloader } from "@/shared/components/Preloader";
+import { CookieBanner } from "@/shared/components/CookieBanner";
+import { SITE_CONFIG } from "@/shared/config";
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700', '900'],
@@ -9,11 +12,24 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Enmobil Sigorta | Güvenilir Yeni Nesil Sigortacılık",
-  description: "Enmobil Sigorta ile Kasko, Trafik, DASK ve Sağlık Sigortası tekliflerini kolayca alın.",
+  title: `${SITE_CONFIG.companyName} | Güvenilir Yeni Nesil Sigortacılık`,
+  description: SITE_CONFIG.description,
+  openGraph: {
+    title: SITE_CONFIG.companyName,
+    description: SITE_CONFIG.description,
+    url: SITE_CONFIG.url,
+    siteName: SITE_CONFIG.name,
+    images: [{ url: '/logo_full.png', width: 1200, height: 630, alt: 'Enmobil Sigorta Logo' }],
+    locale: 'tr_TR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_CONFIG.companyName,
+    description: SITE_CONFIG.description,
+    images: ['/logo_full.png'],
+  },
 };
-
-import { Preloader } from "@/shared/components/Preloader";
 
 export default function RootLayout({
   children,
@@ -28,6 +44,7 @@ export default function RootLayout({
       <body className="font-sans min-h-full flex flex-col bg-background text-foreground bg-[#F8F9FA]">
         <Preloader />
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

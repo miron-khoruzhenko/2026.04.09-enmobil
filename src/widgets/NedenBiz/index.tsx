@@ -12,8 +12,8 @@ const contentBlocks = [
   { 
     id: "block-1",
     label: "GÜVEN",
-    title: "35 Yıllık Güven", 
-    desc: "Sektördeki 35 yıllık tecrübemizle en köklü ve güvenilir kurumlardan biriyiz. Her adımda yanınızdayız.",
+    title: "35 Yıllık Pazar Liderliği", 
+    desc: "Akaryakıt sektöründe 5.000'i aşkın firma ve 45.000'den fazla araca verdiğimiz hizmetle edindiğimiz pazar liderliğini, aynı güven ve güçle şimdi sigorta sektörüne taşıyoruz.",
     img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1974&auto=format&fit=crop"
   },
   { 
