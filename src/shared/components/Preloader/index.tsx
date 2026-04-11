@@ -12,15 +12,24 @@ export const Preloader = () => {
   const [complete, setComplete] = useState(false);
 
   useEffect(() => {
-    // Only show the preloader on the very first visit of the session.
-    // On browser back/forward navigation (bfcache restore) it won't show again.
     const alreadyShown = sessionStorage.getItem("enmobil_preloader_shown");
     if (!alreadyShown) {
       sessionStorage.setItem("enmobil_preloader_shown", "true");
       setShow(true);
     } else {
-      setComplete(true); // Skip immediately
+      setComplete(true);
     }
+
+    // pageshow fires even when the page is restored from bfcache (browser back).
+    // event.persisted === true means it's a bfcache restore, not a fresh load.
+    const handlePageShow = (e: PageTransitionEvent) => {
+      if (e.persisted) {
+        setShow(false);
+        setComplete(true);
+      }
+    };
+    window.addEventListener("pageshow", handlePageShow);
+    return () => window.removeEventListener("pageshow", handlePageShow);
   }, []);
 
   useGSAP(() => {

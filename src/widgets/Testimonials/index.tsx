@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
@@ -32,10 +32,38 @@ export const Testimonials = () => {
         duration: 30 + i * 5,
         ease: "none",
         repeat: -1,
-        force3D: true, // Prevents GPU rasterization clipping bugs
+        force3D: true,
       });
     });
   }, { scope: containerRef });
+
+  // Kill frozen GSAP tweens when page is restored from bfcache (browser back)
+  useEffect(() => {
+    const handlePageShow = (e: PageTransitionEvent) => {
+      if (e.persisted && containerRef.current) {
+        // Kill all tweens scoped to this container and restart cleanly
+        gsap.killTweensOf(containerRef.current.querySelectorAll(".lava-orb"));
+        const orbs = containerRef.current.querySelectorAll(".lava-orb");
+        orbs.forEach((orb, i) => {
+          const isAlt = i % 2 === 0;
+          gsap.to(orb, {
+            keyframes: {
+              "0%": { x: 0, y: 0, scale: 1 },
+              "33%": { x: isAlt ? 300 : -300, y: isAlt ? -150 : 200, scale: 1.3 },
+              "66%": { x: isAlt ? -200 : 300, y: isAlt ? 150 : -100, scale: 0.9 },
+              "100%": { x: 0, y: 0, scale: 1 },
+            },
+            duration: 30 + i * 5,
+            ease: "none",
+            repeat: -1,
+            force3D: true,
+          });
+        });
+      }
+    };
+    window.addEventListener("pageshow", handlePageShow);
+    return () => window.removeEventListener("pageshow", handlePageShow);
+  }, []);
 
   const handleNext = () => {
     animateChange(() => {

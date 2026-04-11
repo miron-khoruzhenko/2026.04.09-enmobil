@@ -51,9 +51,9 @@ export const Calculators = () => {
               Karar vermeden önce size en uygun finansal tabloyu çıkartın. Hesaplama araçlarımızla bütçenizi kontrol altına alın.
             </p>
           </div>
-          <button className="text-brand-dark font-semibold hover:text-brand-red transition-colors hidden md:block">
-            Tüm Araçları Gör &rarr;
-          </button>
+          <a href="/#iletisim" className="text-brand-dark font-semibold hover:text-brand-red transition-colors hidden md:block">
+            Uzmanla Görüş &rarr;
+          </a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -66,12 +66,7 @@ export const Calculators = () => {
                 {tool.icon}
               </div>
               <h3 className="text-lg font-bold text-brand-dark mb-2">{tool.title}</h3>
-              <p className="text-sm text-gray-500 mb-6">{tool.desc}</p>
-              
-              <div className="w-full flex items-center text-sm font-semibold text-brand-red">
-                Hesapla
-                <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">&rarr;</span>
-              </div>
+              <p className="text-sm text-gray-500">{tool.desc}</p>
             </div>
           ))}
         </div>

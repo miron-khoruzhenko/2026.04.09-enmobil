@@ -73,13 +73,22 @@ export default function HizmetlerLayout({ children }: { children: ReactNode }) {
                   Uzman ekibimiz en uygun sigorta teklifini hazırlamak için sizinle iletişime geçecektir.
                 </p>
                 <div className="space-y-4">
-                  <a href={`tel:${SITE_CONFIG.contact.phone.replace(/\s+/g, '')}`} className="flex items-center gap-4 group">
+                  <a href={`tel:${SITE_CONFIG.contact.phones.office.number}`} className="flex items-center gap-4 group">
                     <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-[#D71D24] group-hover:bg-[#D71D24] group-hover:text-white transition-all">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-gray-400 uppercase tracking-widest">Telefon</div>
-                      <div className="font-semibold text-[#1C1917]">{SITE_CONFIG.contact.phoneDisplay}</div>
+                      <div className="text-xs font-bold text-gray-400 uppercase tracking-widest">{SITE_CONFIG.contact.phones.office.label}</div>
+                      <div className="font-semibold text-[#1C1917]">{SITE_CONFIG.contact.phones.office.display}</div>
+                    </div>
+                  </a>
+                  <a href={`tel:${SITE_CONFIG.contact.phones.mobile.number}`} className="flex items-center gap-4 group">
+                    <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-[#D71D24] group-hover:bg-[#D71D24] group-hover:text-white transition-all">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-gray-400 uppercase tracking-widest">{SITE_CONFIG.contact.phones.mobile.label}</div>
+                      <div className="font-semibold text-[#1C1917]">{SITE_CONFIG.contact.phones.mobile.display}</div>
                     </div>
                   </a>
                   <a href={`mailto:${SITE_CONFIG.contact.email}`} className="flex items-center gap-4 group">

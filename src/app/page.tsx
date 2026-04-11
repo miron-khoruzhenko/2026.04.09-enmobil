@@ -11,8 +11,10 @@ import { Contact } from "@/widgets/Contact";
 import { Footer } from "@/widgets/Footer";
 import { Metadata } from "next";
 
+import { SITE_CONFIG } from "@/shared/config";
+
 export const metadata: Metadata = {
-  title: "Anasayfa",
+  title: `Anasayfa - ${SITE_CONFIG.siteName} Sigorta`,
   alternates: {
     canonical: "/",
   }

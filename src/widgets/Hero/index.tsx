@@ -12,7 +12,7 @@ export const Hero = () => {
   useGSAP(() => {
     const ctx = gsap.context(() => {
       // Stagger elements: Pill, H1 lines, P, Buttons, Stats
-      gsap.fromTo(".hero-stagger", 
+      gsap.fromTo(".hero-stagger",
         { y: 40, opacity: 0 },
         {
           y: 0,
@@ -71,12 +71,12 @@ export const Hero = () => {
           </p>
           <div className="hero-stagger flex flex-col sm:flex-row gap-4">
             <a href="#teklif-al">
-              <Button className="text-lg px-8 py-4 hero-stagger w-full sm:w-auto">
+              <Button className="text-lg px-8 py-4 hero-stagger w-full cursor-pointer sm:w-auto">
                 Hemen Teklif Al
               </Button>
             </a>
             <a href="#urunler">
-              <Button variant="outline" className="text-lg px-8 py-4 hero-stagger w-full sm:w-auto">
+              <Button variant="outline" className="text-lg px-8 py-4 hero-stagger w-full cursor-pointer sm:w-auto">
                 Ürünleri İncele
               </Button>
             </a>
@@ -108,8 +108,8 @@ export const Hero = () => {
                   <h3 className="text-2xl font-bold mb-2">Kurumsal Çözümler</h3>
                   <p className="text-gray-400 text-sm">İşletmeniz için en kapsamlı risk yönetimi.</p>
                 </div>
-                <a 
-                  href="#" 
+                <a
+                  href="#urunler"
                   className="w-14 h-14 rounded-full border border-gray-500/50 flex items-center justify-center group-hover:scale-110 group-hover:border-white/80 transition-all duration-300"
                 >
                   <span className="font-light text-xl">&rarr;</span>

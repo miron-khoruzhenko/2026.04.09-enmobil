@@ -6,6 +6,8 @@ const services = [
   "kasko-sigortasi",
   "trafik-sigortasi",
   "tamamlayici-saglik",
+  "isyeri-sigortasi",
+  "konut-sigortasi",
   "dask-konut",
   "seyahat-saglik",
 ];

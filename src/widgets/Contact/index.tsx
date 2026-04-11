@@ -56,35 +56,42 @@ export const Contact = () => {
           </p>
 
           <div className="space-y-6">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-brand-red shadow-sm">
+            <a href={SITE_CONFIG.contact.mapUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+              <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-brand-red shadow-sm group-hover:bg-brand-red group-hover:text-white transition-all">
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
                 <div className="text-sm font-bold text-brand-dark">Genel Müdürlük</div>
-                <div className="text-gray-500 text-sm">{SITE_CONFIG.contact.address}</div>
+                <div className="text-gray-500 text-sm hover:text-brand-red transition-colors">{SITE_CONFIG.contact.address}</div>
               </div>
-            </div>
+            </a>
             
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-brand-red shadow-sm">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-brand-red shadow-sm shrink-0">
                 <Phone className="w-5 h-5" />
               </div>
-              <div>
+              <div className="space-y-1">
                 <div className="text-sm font-bold text-brand-dark">Telefon</div>
-                <div className="text-gray-500 text-sm">{SITE_CONFIG.contact.phoneDisplay}</div>
+                <a href={`tel:${SITE_CONFIG.contact.phones.office.number}`} className="flex items-center gap-2 text-gray-500 text-sm hover:text-brand-red transition-colors">
+                  <span className="text-xs font-bold uppercase tracking-widest text-gray-400 w-10">{SITE_CONFIG.contact.phones.office.label}</span>
+                  {SITE_CONFIG.contact.phones.office.display}
+                </a>
+                <a href={`tel:${SITE_CONFIG.contact.phones.mobile.number}`} className="flex items-center gap-2 text-gray-500 text-sm hover:text-brand-red transition-colors">
+                  <span className="text-xs font-bold uppercase tracking-widest text-gray-400 w-10">{SITE_CONFIG.contact.phones.mobile.label}</span>
+                  {SITE_CONFIG.contact.phones.mobile.display}
+                </a>
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-brand-red shadow-sm">
+            <a href={`mailto:${SITE_CONFIG.contact.email}`} className="flex items-center gap-4 group">
+              <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-brand-red shadow-sm group-hover:bg-brand-red group-hover:text-white transition-all">
                 <Mail className="w-5 h-5" />
               </div>
               <div>
                 <div className="text-sm font-bold text-brand-dark">E-Posta</div>
-                <div className="text-gray-500 text-sm">{SITE_CONFIG.contact.email}</div>
+                <div className="text-gray-500 text-sm hover:text-brand-red transition-colors">{SITE_CONFIG.contact.email}</div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 

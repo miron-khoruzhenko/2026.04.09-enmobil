@@ -10,37 +10,37 @@ gsap.registerPlugin(ScrollTrigger);
 
 const products = [
   { 
-    id: 1, 
+    id: 1, href: "/hizmetler/kasko-sigortasi",
     title: "Kasko Sigortası", 
     desc: "Siz yolun tadını çıkarın, diğer olasılıklar teminat altında!",
     img: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=600"
   },
   { 
-    id: 2, 
+    id: 2, href: "/hizmetler/trafik-sigortasi",
     title: "Trafik Sigortası", 
     desc: "Zorunlulukları kolaylaştırmak için Enmobil Sigorta!",
     img: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=600"
   },
   { 
-    id: 3, 
+    id: 3, href: "/hizmetler/tamamlayici-saglik",
     title: "Tamamlayıcı Sağlık", 
     desc: "Enmobil Sigorta ile hep sağlık olsun!",
     img: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&q=80&w=600"
   },
   { 
-    id: 4, 
+    id: 4, href: "/hizmetler/isyeri-sigortasi",
     title: "İşyeri Sigortası", 
     desc: "Ofisinizdeki riskler bize, başarılar size kalsın.",
     img: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=600"
   },
   { 
-    id: 5, 
+    id: 5, href: "/hizmetler/konut-sigortasi",
     title: "Konut Sigortası", 
     desc: "Evinizin sıcaklığı her dem güvencede olsun.",
     img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600"
   },
   { 
-    id: 6, 
+    id: 6, href: "/hizmetler/seyahat-saglik",
     title: "Seyahat Sağlık", 
     desc: "Vize başvurularınızda ve seyahatlerinizde yanınızdayız.",
     img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=600"
@@ -107,7 +107,7 @@ export const Products = () => {
                 </div>
                 
                 {/* Red Pill Button */}
-                <a href="#" className="mt-8 flex items-center justify-center gap-2 bg-brand-red text-white px-6 py-3 rounded-full font-bold hover:bg-red-700 transition-all shadow-lg shadow-brand-red/30 hover:shadow-brand-red/50 group-hover:px-8 group-hover:scale-105 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] duration-300">
+                <a href={product.href} className="mt-8 flex items-center justify-center gap-2 bg-brand-red text-white px-6 py-3 rounded-full font-bold hover:bg-red-700 transition-all shadow-lg shadow-brand-red/30 hover:shadow-brand-red/50 group-hover:px-8 group-hover:scale-105 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] duration-300">
                   İncele
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>

@@ -73,7 +73,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     );
 
     const baseStyles =
-      "group relative overflow-hidden inline-flex items-center justify-center px-6 py-3 font-medium rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
+      "group cursor-pointer relative overflow-hidden inline-flex items-center justify-center px-6 py-3 font-medium rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
 
     const variants = {
       primary: "bg-brand-red text-white hover:shadow-magnetic",

@@ -5,32 +5,11 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Plus, Minus } from "lucide-react";
 import { cn } from "@/shared/lib/utils";
-
-const faqs = [
-  { 
-    id: 1, 
-    question: "Kasko değer hesaplaması nasıl yapılır?", 
-    answer: "Kasko değeri, Türkiye Sigorta Birliği (TSB) tarafından her ay güncellenen Araç Kasko Değer Listesi baz alınarak hesaplanır. Aracınızın markası, modeli ve üretim yılı gibi faktörler belirleyicidir." 
-  },
-  { 
-    id: 2, 
-    question: "Trafik sigortasını geç yaptırmanın cezası nedir?", 
-    answer: "Trafik sigortası poliçe bitiş tarihinden sonra yenilenmezse, gecikilen her ay için poliçe primine %5 oranında gecikme zammı uygulanır. Ayrıca trafik kontrollerinde aracınız bağlanabilir." 
-  },
-  { 
-    id: 3, 
-    question: "Tamamlayıcı sağlık sigortası neleri kapsar?", 
-    answer: "SGK ile anlaşmalı özel hastanelerde, SGK'nın kapsadığı sağlık hizmetleri için ödenmesi gereken fark ücretlerini kapsar. Yatarak ve ayakta tedavi teminatları bulunur." 
-  },
-  { 
-    id: 4, 
-    question: "Hasar anında ne yapmalıyım?", 
-    answer: "Hasar durumunda öncelikle 7/24 hizmet veren Enmobil Hasar Destek Hattımızı arayarak veya mobil uygulamamız üzerinden 'Hasar Bildirimi' sekmesini kullanarak anında kayıt oluşturabilirsiniz." 
-  },
-];
+import { FAQ_DATA } from "@/shared/config/faq";
 
 export const FAQ = () => {
   const [openId, setOpenId] = useState<number | null>(null);
+  const faqs = FAQ_DATA;
 
   const toggle = (id: number) => {
     setOpenId(openId === id ? null : id);
@@ -51,11 +30,11 @@ export const FAQ = () => {
 
         <div className="space-y-4">
           {faqs.map((faq) => (
-            <AccordionItem 
-              key={faq.id} 
-              faq={faq} 
-              isOpen={openId === faq.id} 
-              onToggle={() => toggle(faq.id)} 
+            <AccordionItem
+              key={faq.id}
+              faq={faq}
+              isOpen={openId === faq.id}
+              onToggle={() => toggle(faq.id)}
             />
           ))}
         </div>
