@@ -56,9 +56,11 @@ export const Header = () => {
 
         {/* CTA */}
         <div className="flex items-center gap-4">
-          <Button variant="primary" className="text-sm">
-            Hemen Teklif Al
-          </Button>
+          <a href="#teklif-al">
+            <Button variant="primary" className="text-sm">
+              Hemen Teklif Al
+            </Button>
+          </a>
         </div>
       </div>
     </header>

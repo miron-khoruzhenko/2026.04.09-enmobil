@@ -30,12 +30,15 @@ export const Partners = () => {
 
     // Infinite Marquee Animation
     if (marqueeRef.current) {
-      gsap.to(".marquee-track", {
+      const tween = gsap.to(".marquee-track", {
         xPercent: -50,
         ease: "none",
         duration: 25,
         repeat: -1,
       });
+
+      marqueeRef.current.addEventListener("mouseenter", () => tween.pause());
+      marqueeRef.current.addEventListener("mouseleave", () => tween.play());
     }
   }, { scope: containerRef });
 

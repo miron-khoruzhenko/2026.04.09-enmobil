@@ -59,7 +59,7 @@ export const QuoteForm = () => {
   }, [activeTab]);
 
   return (
-    <section className="py-24 bg-white relative z-20">
+    <section id="teklif-al" className="py-24 bg-white relative z-20">
       <div className="max-w-5xl mx-auto px-6">
         
         <div className="text-center mb-10">

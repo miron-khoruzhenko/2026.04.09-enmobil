@@ -9,6 +9,14 @@ import { Testimonials } from "@/widgets/Testimonials";
 import { FAQ } from "@/widgets/FAQ";
 import { Contact } from "@/widgets/Contact";
 import { Footer } from "@/widgets/Footer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Anasayfa",
+  alternates: {
+    canonical: "/",
+  }
+};
 
 export default function Home() {
   return (

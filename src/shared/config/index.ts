@@ -1,5 +1,6 @@
 export const SITE_CONFIG = {
-  name: "Enmobil",
+  siteName: "Enmobil",
+  siteTitle: "Enmobil Sigorta | Güvenilir Yeni Nesil Sigortacılık",
   companyName: "ENMOBİL SİGORTA",
   description: "Akaryakıt sektöründeki 35 yıllık tecrübemizi ve pazar liderliğimizi sigorta sektörüne taşıyor, geleceğinizi güvence altına alıyoruz. Size en uygun poliçeyi dakikalar içinde oluşturun.",
   url: "https://enmobil.com.tr", // Replace with actual domain when going live

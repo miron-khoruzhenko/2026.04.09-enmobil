@@ -6,7 +6,7 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
         <div className="space-y-4">
           <div className="flex flex-col leading-none">
-            <span className="text-2xl font-black tracking-tight text-white">{SITE_CONFIG.name.toUpperCase()}</span>
+            <span className="text-2xl font-black tracking-tight text-white">{SITE_CONFIG.siteName.toUpperCase()}</span>
             <span className="text-xs uppercase font-bold tracking-widest text-brand-red">Sigorta</span>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
@@ -38,9 +38,9 @@ export const Footer = () => {
         <div>
           <h4 className="font-bold text-lg mb-4">İletişim</h4>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li>{SITE_CONFIG.contact.phoneDisplay}</li>
-            <li>{SITE_CONFIG.contact.email}</li>
-            <li>{SITE_CONFIG.contact.address}</li>
+            <li><a href={`tel:${SITE_CONFIG.contact.phone.replace(/\s+/g, '')}`} className="hover:text-brand-red transition-colors">{SITE_CONFIG.contact.phoneDisplay}</a></li>
+            <li><a href={`mailto:${SITE_CONFIG.contact.email}`} className="hover:text-brand-red transition-colors">{SITE_CONFIG.contact.email}</a></li>
+            <li><a href={SITE_CONFIG.contact.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors leading-relaxed block">{SITE_CONFIG.contact.address}</a></li>
           </ul>
         </div>
       </div>

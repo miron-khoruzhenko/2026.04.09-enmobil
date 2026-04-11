@@ -70,12 +70,16 @@ export const Hero = () => {
             35 yıllık deneyimimizle, ihtiyaçlarınıza en uygun sigorta çözümlerini anında listeleyin, dakikalar içinde poliçenizi oluşturun.
           </p>
           <div className="hero-stagger flex flex-col sm:flex-row gap-4">
-            <Button className="text-lg px-8 py-4 hero-stagger">
-              Hemen Teklif Al
-            </Button>
-            <Button variant="outline" className="text-lg px-8 py-4 hero-stagger">
-              Ürünleri İncele
-            </Button>
+            <a href="#teklif-al">
+              <Button className="text-lg px-8 py-4 hero-stagger w-full sm:w-auto">
+                Hemen Teklif Al
+              </Button>
+            </a>
+            <a href="#urunler">
+              <Button variant="outline" className="text-lg px-8 py-4 hero-stagger w-full sm:w-auto">
+                Ürünleri İncele
+              </Button>
+            </a>
           </div>
         </div>
 

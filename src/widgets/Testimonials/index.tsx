@@ -25,13 +25,14 @@ export const Testimonials = () => {
       gsap.to(orb, {
         keyframes: {
           "0%": { x: 0, y: 0, scale: 1 },
-          "33%": { x: isAlt ? 400 : -500, y: isAlt ? -200 : 300, scale: 1.5 },
-          "66%": { x: isAlt ? -300 : 400, y: isAlt ? 200 : -100, scale: 0.8 },
+          "33%": { x: isAlt ? 300 : -300, y: isAlt ? -150 : 200, scale: 1.3 },
+          "66%": { x: isAlt ? -200 : 300, y: isAlt ? 150 : -100, scale: 0.9 },
           "100%": { x: 0, y: 0, scale: 1 },
         },
         duration: 30 + i * 5,
         ease: "none",
         repeat: -1,
+        force3D: true, // Prevents GPU rasterization clipping bugs
       });
     });
   }, { scope: containerRef });
@@ -73,10 +74,19 @@ export const Testimonials = () => {
       className="py-24 bg-brand-dark text-white relative flex items-center justify-center min-h-[500px] overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none">
-        {/* Lava Lamp Orbs */}
-        <div className="lava-orb absolute top-1/4 left-1/4 w-[30vw] h-[30vw] min-w-[300px] min-h-[300px] bg-brand-red/20 rounded-full blur-[80px]" />
-        <div className="lava-orb absolute bottom-0 right-1/4 w-[25vw] h-[25vw] min-w-[250px] min-h-[250px] bg-red-600/20 rounded-full blur-[100px]" />
-        <div className="lava-orb absolute top-1/2 left-1/2 -translate-x-1/2 w-[40vw] h-[20vw] bg-brand-blue/10 rounded-full blur-[120px]" />
+        {/* Lava Lamp Orbs using radial-gradient for superior performance & no GPU clipping */}
+        <div 
+          className="lava-orb absolute top-0 left-0 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2 opacity-30 select-none pointer-events-none" 
+          style={{ background: "radial-gradient(circle, #D71D24 0%, transparent 65%)" }} 
+        />
+        <div 
+          className="lava-orb absolute bottom-0 right-0 w-[600px] h-[600px] translate-x-1/4 translate-y-1/4 opacity-30 select-none pointer-events-none" 
+          style={{ background: "radial-gradient(circle, #D71D24 0%, transparent 65%)" }} 
+        />
+        <div 
+          className="lava-orb absolute top-1/2 left-1/2 w-[900px] h-[900px] -translate-x-1/2 -translate-y-1/2 opacity-20 select-none pointer-events-none" 
+          style={{ background: "radial-gradient(circle, #0E71B8 0%, transparent 60%)" }} 
+        />
       </div>
 
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
