@@ -17,11 +17,11 @@ export const Footer = () => {
         <div>
           <h4 className="font-bold text-lg mb-4">Ürünlerimiz</h4>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li><a href="#" className="hover:text-brand-red transition-colors">Kasko Sigortası</a></li>
-            <li><a href="#" className="hover:text-brand-red transition-colors">Trafik Sigortası</a></li>
-            <li><a href="#" className="hover:text-brand-red transition-colors">Tamamlayıcı Sağlık</a></li>
-            <li><a href="#" className="hover:text-brand-red transition-colors">DASK ve Konut</a></li>
-            <li><a href="#" className="hover:text-brand-red transition-colors">Seyahat Sağlık</a></li>
+            <li><a href="/hizmetler/kasko-sigortasi" className="hover:text-brand-red transition-colors">Kasko Sigortası</a></li>
+            <li><a href="/hizmetler/trafik-sigortasi" className="hover:text-brand-red transition-colors">Trafik Sigortası</a></li>
+            <li><a href="/hizmetler/tamamlayici-saglik" className="hover:text-brand-red transition-colors">Tamamlayıcı Sağlık</a></li>
+            <li><a href="/hizmetler/dask-konut" className="hover:text-brand-red transition-colors">DASK ve Konut</a></li>
+            <li><a href="/hizmetler/seyahat-saglik" className="hover:text-brand-red transition-colors">Seyahat Sağlık</a></li>
           </ul>
         </div>
 

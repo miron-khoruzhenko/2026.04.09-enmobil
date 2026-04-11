@@ -8,3 +8,6 @@
 - [x] add cookie consent banner
 - [x] add other pages (about, contact, etc.)
 - [x] add preview for links
+- [ ] 404 page
+- [ ] обновил ссылки в ürünler 
+- [ ] исправить md таблицы на страницах
