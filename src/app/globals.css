@@ -33,5 +33,20 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  
+  .clean-scrollbar::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+  .clean-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .clean-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #E5E7EB;
+    border-radius: 10px;
+  }
+  .clean-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #D1D5DB;
+  }
 }
 

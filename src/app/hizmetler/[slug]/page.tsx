@@ -6,10 +6,13 @@ const services = [
   "kasko-sigortasi",
   "trafik-sigortasi",
   "tamamlayici-saglik",
+  "ozel-saglik",
   "isyeri-sigortasi",
   "konut-sigortasi",
   "dask-konut",
   "seyahat-saglik",
+  "yabanci-saglik",
+  "pati-sigortasi"
 ];
 
 type Props = {

@@ -6,22 +6,25 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
-import { ShieldCheck, Car, Home, Plane, HeartPulse } from "lucide-react";
+import { ShieldCheck, Car, Home, Plane, HeartPulse, Stethoscope, PawPrint, FileBadge } from "lucide-react";
 import { cn } from "@/shared/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 const TABS = [
-  { id: "ekasko", label: "e-kasko", icon: <ShieldCheck className="w-5 h-5" />, message: "e-kasko Sigortası yolculuğu, 9 taksit imkânıyla başlasın!" },
   { id: "kasko", label: "Kasko", icon: <Car className="w-5 h-5" />, message: "Aracınızı güvence altına alın, yola içiniz rahat çıkın." },
+  { id: "trafik", label: "Trafik", icon: <ShieldCheck className="w-5 h-5" />, message: "Zorunlulukları kolaylaştırmak için Enmobil Sigorta!" },
+  { id: "tamamlayici", label: "Tamamlayıcı Sağlık", icon: <Stethoscope className="w-5 h-5" />, message: "Enmobil Sigorta ile hep sağlık olsun!" },
+  { id: "ozel", label: "Özel Sağlık", icon: <HeartPulse className="w-5 h-5" />, message: "Size özel fırsatlarla sağlık sigortası yolculuğunuz hemen başlasın!" },
   { id: "dask", label: "DASK", icon: <Home className="w-5 h-5" />, message: "Zorunlu Deprem Sigortanızı anında ve güvenle yaptırın." },
-  { id: "pati", label: "Pati", icon: <HeartPulse className="w-5 h-5" />, message: "Sevimli dostlarımızın sağlığı da hep güvende olsun." },
+  { id: "konut", label: "Konut", icon: <Home className="w-5 h-5" />, message: "Evinizin sıcaklığı her dem güvencede olsun." },
   { id: "seyahat", label: "Seyahat", icon: <Plane className="w-5 h-5" />, message: "Dünyayı keşfederken sağlığınız bize emanet." },
-  { id: "ozel", label: "Size Özel", icon: <ShieldCheck className="w-5 h-5" />, message: "Size özel fırsatlarla sigorta yolculuğunuz hemen başlasın!" },
+  { id: "yabanci", label: "Yabancı Sağlık", icon: <FileBadge className="w-5 h-5" />, message: "Vize ve ikamet işlemleriniz için güvenilir sağlık sigortası." },
+  { id: "pati", label: "Pati", icon: <PawPrint className="w-5 h-5" />, message: "Sevimli dostlarımızın sağlığı da hep güvende olsun." },
 ];
 
 export const QuoteForm = () => {
-  const [activeTab, setActiveTab] = useState("ekasko");
+  const [activeTab, setActiveTab] = useState("kasko");
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
 
@@ -71,7 +74,7 @@ export const QuoteForm = () => {
         <div ref={containerRef} className="shadow-2xl shadow-gray-200/60 rounded-3xl bg-white border border-gray-100 flex flex-col overflow-hidden">
           
           {/* Tabs */}
-          <div className="flex overflow-x-auto hide-scrollbar bg-gray-50/50 border-b border-gray-100 p-2 gap-2">
+          <div className="flex overflow-x-auto clean-scrollbar bg-gray-50/50 border-b border-gray-100 p-2 gap-2">
             {TABS.map((tab) => {
               const isActive = activeTab === tab.id;
               return (
@@ -96,34 +99,51 @@ export const QuoteForm = () => {
 
           {/* Form Area */}
           <div className="p-8 md:p-12">
-            <div className="flex items-center gap-2 mb-6">
-              <input type="checkbox" id="no-plate" className="w-5 h-5 rounded border-gray-300 text-brand-red focus:ring-brand-red" />
-              <label htmlFor="no-plate" className="text-sm font-medium text-gray-700 cursor-pointer">
-                Plakam Yok
-              </label>
-            </div>
+            
+            {['kasko', 'trafik'].includes(activeTab) && (
+              <div className="flex items-center gap-2 mb-6">
+                <input type="checkbox" id="no-plate" className="w-5 h-5 rounded border-gray-300 text-brand-red focus:ring-brand-red" />
+                <label htmlFor="no-plate" className="text-sm font-medium text-gray-700 cursor-pointer">
+                  Plakam Yok
+                </label>
+              </div>
+            )}
+            {/* If not a vehicle insurance, we add an invisible spacer or just padding so the form doesn't jump. Since checkboxes take space, we can either leave it out or add margin. We'll just leave it out to keep it clean, but add margin top to grid if it's there. */}
+            
+            <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8", !['kasko', 'trafik'].includes(activeTab) && "mt-4")}>
+              
+              {/* Dynamic Inputs based on type */}
+              {['kasko', 'trafik'].includes(activeTab) ? (
+                <>
+                  <input type="text" placeholder="Plaka" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red" />
+                  <input type="text" placeholder="TCKN / VKN" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red" />
+                </>
+              ) : ['tamamlayici', 'ozel', 'yabanci'].includes(activeTab) ? (
+                <>
+                  <input type="text" placeholder="Ad Soyad" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red" />
+                  <input type="text" placeholder="TCKN / YKN" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red" />
+                </>
+              ) : ['seyahat'].includes(activeTab) ? (
+                <>
+                  <input type="text" placeholder="Ad Soyad" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red" />
+                  <input type="text" placeholder="Gidilecek Ülke" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red" />
+                </>
+              ) : ['pati'].includes(activeTab) ? (
+                <>
+                  <input type="text" placeholder="Ad Soyad" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red" />
+                  <input type="text" placeholder="Evcil Hayvan Türü" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red" />
+                </>
+              ) : (
+                /* Default (DASK, Konut, vb.) */
+                <>
+                  <input type="text" placeholder="Ad Soyad" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red" />
+                  <input type="text" placeholder="TCKN" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red" />
+                </>
+              )}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-              <input 
-                type="text" 
-                placeholder="Plaka" 
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red"
-              />
-              <input 
-                type="text" 
-                placeholder="TCKN" 
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red"
-              />
-              <input 
-                type="email" 
-                placeholder="E-Posta" 
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red"
-              />
-              <input 
-                type="tel" 
-                placeholder="Cep Telefonu" 
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red"
-              />
+              {/* Common Fields */}
+              <input type="email" placeholder="E-Posta" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red" />
+              <input type="tel" placeholder="Cep Telefonu" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red" />
             </div>
 
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">

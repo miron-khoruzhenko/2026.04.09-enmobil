@@ -17,7 +17,7 @@ export const FAQ_DATA = [
   {
     id: 4,
     question: "Hasar anında ne yapmalıyım?",
-    answer: "Hasar durumunda öncelikle 7/24 hizmet veren Enmobil Hasar Destek Hattımızı arayarak veya mobil uygulamamız üzerinden 'Hasar Bildirimi' sekmesini kullanarak anında kayıt oluşturabilirsiniz."
+    answer: "Hasar durumunda öncelikle hizmet saatlerimiz içerisinde Hasar Destek Hattımızı arayarak veya mobil uygulamamız üzerinden 'Hasar Bildirimi' sekmesini kullanarak anında kayıt oluşturabilirsiniz."
   },
   {
     id: 5,

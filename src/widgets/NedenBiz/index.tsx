@@ -19,15 +19,15 @@ const contentBlocks = [
   { 
     id: "block-2",
     label: "HİZMET",
-    title: "7/24 Kesintisiz Destek", 
-    desc: "Hasar anında ve sonrasında 7/24 canlı destek hattımızla sizi asla yalnız bırakmıyoruz. Birlikte güçlüyüz.",
+    title: "Profesyonel Destek", 
+    desc: "Hasar anında ve sonrasında profesyonel destek hattımızla sizi asla yalnız bırakmıyoruz. Birlikte güçlüyüz.",
     img: "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop"
   },
   { 
     id: "block-3",
     label: "FİYAT / PERFORMANS",
     title: "En İyi Seçenekler", 
-    desc: "Geniş anlaşmalı ağımızla size en uygun ve bütçe dostu teklifi saniyeler içinde sunabiliyoruz.",
+    desc: "İhtiyacınıza en uygun, bütçe dostu poliçe tekliflerini hızlıca sunuyoruz.",
     img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop"
   },
   { 

@@ -6,9 +6,9 @@ import gsap from "gsap";
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
-  { id: 1, text: "Kaza sonrasında süreç o kadar hızlı ilerledi ki inanamadım. Enmobil, sadece sigorta satmıyor, gerçekten yanınızda olduğunu hissettiriyor.", author: "Ahmet Yıldırım", role: "İş İnsanı" },
-  { id: 2, text: "Yıllardır tüm araçlarımızın kaskosu ve sağlık sigortalarımız için güvendiğimiz tek adres. Acente ağının geniş olması büyük avantaj.", author: "Ayşe Kılıç", role: "Doktor" },
-  { id: 3, text: "Uygulamaları üzerinden poliçemi 2 dakikada yeniledim. Fiyat karşılaştırmaları çok şeffaf ve anlaşılır, en iyi teklifi bulmak çok kolay.", author: "Burak Yılmaz", role: "Mimar" },
+  { id: 1, text: "Kaza sonrasında süreç o kadar hızlı ilerledi ki inanamadım. Enmobil, sadece sigorta satmıyor, gerçekten yanınızda olduğunu hissettiriyor." },
+  { id: 2, text: "Yıllardır tüm araçlarımızın kaskosu ve sağlık sigortalarımız için güvendiğimiz tek adres. Acente ağının geniş olması büyük avantaj." },
+  { id: 3, text: "Uygulamaları üzerinden poliçemi 2 dakikada yeniledim. Fiyat karşılaştırmaları çok şeffaf ve anlaşılır, en iyi teklifi bulmak çok kolay." },
 ];
 
 export const Testimonials = () => {
@@ -51,14 +51,14 @@ export const Testimonials = () => {
               "0%": { x: 0, y: 0, scale: 1 },
               "33%": { x: isAlt ? 300 : -300, y: isAlt ? -150 : 200, scale: 1.3 },
               "66%": { x: isAlt ? -200 : 300, y: isAlt ? 150 : -100, scale: 0.9 },
-              "100%": { x: 0, y: 0, scale: 1 },
-            },
-            duration: 30 + i * 5,
-            ease: "none",
-            repeat: -1,
-            force3D: true,
-          });
-        });
+          "100%": { x: 0, y: 0, scale: 1 },
+        },
+        duration: 30 + i * 5,
+        ease: "none",
+        repeat: -1,
+        force3D: true,
+      });
+    });
       }
     };
     window.addEventListener("pageshow", handlePageShow);
@@ -79,14 +79,14 @@ export const Testimonials = () => {
 
   const animateChange = (updateState: () => void) => {
     gsap.timeline()
-      .to([textRef.current, authorRef.current], { 
+      .to([textRef.current], { 
         y: 20, 
         opacity: 0, 
         duration: 0.3,
         ease: "power2.in",
         onComplete: updateState
       })
-      .to([textRef.current, authorRef.current], { 
+      .to([textRef.current], { 
         y: 0, 
         opacity: 1, 
         duration: 0.4,
@@ -125,13 +125,6 @@ export const Testimonials = () => {
           <p ref={textRef} className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed text-gray-200">
             "{testimonials[currentIndex].text}"
           </p>
-        </div>
-
-        <div ref={authorRef} className="mt-10 flex flex-col items-center">
-          <div className="font-bold text-xl">{testimonials[currentIndex].author}</div>
-          <div className="text-brand-red text-sm font-semibold tracking-widest uppercase mt-1">
-            {testimonials[currentIndex].role}
-          </div>
         </div>
 
         <div className="flex items-center gap-4 mt-12">

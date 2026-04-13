@@ -5,7 +5,7 @@ export const SITE_CONFIG = {
   description: "Akaryakıt sektöründeki 35 yıllık tecrübemizi ve pazar liderliğimizi sigorta sektörüne taşıyor, geleceğinizi güvence altına alıyoruz. Size en uygun poliçeyi dakikalar içinde oluşturun.",
   url: "https://enmobil.com.tr", // Replace with actual domain when going live
   contact: {
-    email: "destek@enmobil.com.tr",
+    email: "info@enmobil.com.tr",
     phones: {
       office: { number: "02625023978", display: "0 262 502 39 78", label: "Ofis" },
       mobile: { number: "05323403674", display: "0 532 340 36 74", label: "Mobil" },

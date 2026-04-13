@@ -4,46 +4,103 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { 
+  CarFront, Car, Stethoscope, HeartPulse, 
+  Home, Heart, PlaneTakeoff, FileBadge, 
+  PawPrint, Shield, Search
+} from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const products = [
   { 
     id: 1, href: "/hizmetler/kasko-sigortasi",
-    title: "Kasko Sigortası", 
-    desc: "Siz yolun tadını çıkarın, diğer olasılıklar teminat altında!",
-    img: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=600"
+    title: "Kasko", subtitle: "Sigortası",
+    icon: (
+      <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
+        <CarFront className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
+        <Shield className="w-7 h-7 text-brand-red fill-white absolute bottom-0 -right-2" strokeWidth={2} />
+      </div>
+    )
   },
   { 
     id: 2, href: "/hizmetler/trafik-sigortasi",
-    title: "Trafik Sigortası", 
-    desc: "Zorunlulukları kolaylaştırmak için Enmobil Sigorta!",
-    img: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=600"
+    title: "Trafik", subtitle: "Sigortası",
+    icon: (
+      <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
+        <Car className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
+        <Car className="w-10 h-10 text-brand-red/80 absolute -top-1 -right-4 -z-10" strokeWidth={1.5} />
+      </div>
+    )
   },
   { 
     id: 3, href: "/hizmetler/tamamlayici-saglik",
-    title: "Tamamlayıcı Sağlık", 
-    desc: "Enmobil Sigorta ile hep sağlık olsun!",
-    img: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&q=80&w=600"
+    title: "Tamamlayıcı", subtitle: "Sağlık",
+    icon: (
+      <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
+        <Stethoscope className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
+      </div>
+    )
   },
   { 
-    id: 4, href: "/hizmetler/isyeri-sigortasi",
-    title: "İşyeri Sigortası", 
-    desc: "Ofisinizdeki riskler bize, başarılar size kalsın.",
-    img: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=600"
+    id: 4, href: "/hizmetler/ozel-saglik", // Not created yet, but matches design
+    title: "Özel", subtitle: "Sağlık",
+    icon: (
+      <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
+        <HeartPulse className="w-12 h-12 text-brand-red fill-red-500/10" strokeWidth={1.5} />
+      </div>
+    )
   },
   { 
-    id: 5, href: "/hizmetler/konut-sigortasi",
-    title: "Konut Sigortası", 
-    desc: "Evinizin sıcaklığı her dem güvencede olsun.",
-    img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600"
+    id: 5, href: "/hizmetler/dask-konut", // Current slug for DASK, might need separation later, but links here for now
+    title: "DASK", subtitle: "Sigortası",
+    icon: (
+      <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
+        <Home className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
+        <div className="absolute -bottom-2 w-full h-1 bg-brand-red rounded-full" />
+      </div>
+    )
   },
   { 
-    id: 6, href: "/hizmetler/seyahat-saglik",
-    title: "Seyahat Sağlık", 
-    desc: "Vize başvurularınızda ve seyahatlerinizde yanınızdayız.",
-    img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=600"
+    id: 6, href: "/hizmetler/konut-sigortasi",
+    title: "Konut", subtitle: "Sigortası",
+    icon: (
+      <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
+        <Heart className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
+        <Home className="w-6 h-6 text-brand-red absolute top-1/2 left-1/2 -transform -translate-x-1/2 -translate-y-1/2" strokeWidth={2} />
+      </div>
+    )
+  },
+  { 
+    id: 7, href: "/hizmetler/seyahat-saglik",
+    title: "Seyahat", subtitle: "Sigortası",
+    icon: (
+      <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
+        <PlaneTakeoff className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
+        <Heart className="w-6 h-6 text-brand-red absolute bottom-0 right-0 fill-white" strokeWidth={2} />
+      </div>
+    )
+  },
+  { 
+    id: 8, href: "/hizmetler/yabanci-saglik",
+    title: "Yabancı", subtitle: "Sağlık",
+    icon: (
+      <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
+        <FileBadge className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
+        <Shield className="w-6 h-6 text-brand-red absolute bottom-0 right-0 fill-white" strokeWidth={2} />
+      </div>
+    )
+  },
+  { 
+    id: 9, href: "/hizmetler/pati-sigortasi",
+    title: "Pati", subtitle: "Sigortası",
+    icon: (
+      <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
+        <Shield className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
+        <PawPrint className="w-6 h-6 text-brand-red absolute top-1/2 left-1/2 -transform -translate-x-1/2 -translate-y-1/2 fill-white" strokeWidth={1.5} />
+      </div>
+    )
   },
 ];
 
@@ -53,7 +110,7 @@ export const Products = () => {
   useGSAP(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(".product-card", 
-        { y: 60, opacity: 0 },
+        { y: 40, opacity: 0 },
         {
           scrollTrigger: {
             trigger: containerRef.current,
@@ -61,9 +118,9 @@ export const Products = () => {
           },
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: "back.out(1.2)",
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power2.out",
         }
       );
     }, containerRef);
@@ -71,8 +128,8 @@ export const Products = () => {
   }, { scope: containerRef });
 
   return (
-    <section id="urunler" className="py-24 bg-[#F2F3FB] relative">
-      <div className="max-w-7xl mx-auto px-6 relative z-10" ref={containerRef}>
+    <section id="urunler" className="py-32 bg-white relative">
+      <div className="max-w-[1200px] mx-auto px-6 relative z-10" ref={containerRef}>
         
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-brand-dark mb-4 tracking-tight">
@@ -80,41 +137,47 @@ export const Products = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <div 
-              key={product.id} 
-              className="product-card group relative bg-white border border-transparent rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] flex flex-col"
-            >
-              {/* Top Half: Soft Gray BG with Image */}
-              <div className="h-[220px] bg-gray-100 p-4 relative overflow-hidden flex items-center justify-center">
-                <img 
-                  src={product.img} 
-                  alt={product.title} 
-                  className="w-full h-full object-cover rounded-[20px] group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
-                />
-              </div>
-              
-              {/* Bottom Half: Content */}
-              <div className="flex-1 flex flex-col items-center justify-between p-8 text-center bg-white relative z-10">
-                <div>
-                  <h3 className="text-2xl font-bold text-brand-dark mb-3">
-                    {product.title}
-                  </h3>
-                  <p className="text-gray-500 font-medium leading-relaxed">
-                    {product.desc}
-                  </p>
+        {/* 4 items on top, 5 on bottom */}
+        <div className="flex flex-col gap-3">
+          
+          {/* Top Row: 4 items */}
+          <div className="flex flex-col sm:flex-row flex-wrap lg:flex-nowrap gap-3">
+            {products.slice(0, 4).map((product) => (
+              <Link 
+                key={product.id}
+                href={product.href} 
+                className="product-card group relative flex-1 w-full sm:w-[48%] lg:w-auto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out border-2 border-gray-100/60 hover:border-brand-red/20 flex flex-col py-10 px-6 min-h-[220px]"
+              >
+                <div className="flex flex-col items-center justify-center w-full h-full text-center">
+                  <div className="transition-transform duration-500 group-hover:scale-110 group-hover:drop-shadow-lg">
+                    {product.icon}
+                  </div>
+                  <span className="text-brand-dark font-bold text-sm sm:text-base mt-2">{product.title}</span>
+                  <span className="text-brand-dark font-semibold text-sm sm:text-base opacity-90">{product.subtitle}</span>
                 </div>
-                
-                {/* Red Pill Button */}
-                <a href={product.href} className="mt-8 flex items-center justify-center gap-2 bg-brand-red text-white px-6 py-3 rounded-full font-bold hover:bg-red-700 transition-all shadow-lg shadow-brand-red/30 hover:shadow-brand-red/50 group-hover:px-8 group-hover:scale-105 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] duration-300">
-                  İncele
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
+              </Link>
+            ))}
+          </div>
 
-            </div>
-          ))}
+          {/* Bottom Row: 5 items */}
+          <div className="flex flex-col sm:flex-row flex-wrap lg:flex-nowrap gap-3">
+            {products.slice(4, 9).map((product) => (
+              <Link 
+                key={product.id}
+                href={product.href} 
+                className="product-card group relative flex-1 w-full sm:w-[48%] lg:w-auto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out border-2 border-gray-100/60 hover:border-brand-red/20 flex flex-col py-10 px-6 min-h-[220px]"
+              >
+                <div className="flex flex-col items-center justify-center w-full h-full text-center">
+                  <div className="transition-transform duration-500 group-hover:scale-110 group-hover:drop-shadow-lg">
+                    {product.icon}
+                  </div>
+                  <span className="text-brand-dark font-bold text-sm sm:text-base mt-2">{product.title}</span>
+                  <span className="text-brand-dark font-semibold text-sm sm:text-base opacity-90">{product.subtitle}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
         </div>
 
       </div>
