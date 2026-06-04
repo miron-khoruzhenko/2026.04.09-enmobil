@@ -22,6 +22,7 @@ export const Header = () => {
 
   const navLinks = [
     { name: "Ürünlerimiz", href: "/#urunler" },
+    { name: "Hasar Merkezi", href: "/hasar-merkezi" },
     { name: "Neden Biz?", href: "/#neden-biz" },
     { name: "Referanslar", href: "/#referanslar" },
     { name: "SSS", href: "/#sss" },

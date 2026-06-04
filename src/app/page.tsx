@@ -25,12 +25,10 @@ export default function Home() {
     <>
       <Header />
       <main className="flex-1">
-        <Hero />
         <QuoteForm />
         <NedenBiz />
         <Products />
         <Testimonials />
-        <Calculators />
         <Partners />
         <FAQ />
         <Contact />

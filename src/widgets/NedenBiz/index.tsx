@@ -12,8 +12,8 @@ const contentBlocks = [
   { 
     id: "block-1",
     label: "GÜVEN",
-    title: "35 Yıllık Pazar Liderliği", 
-    desc: "Akaryakıt sektöründe 5.000'i aşkın firma ve 45.000'den fazla araca verdiğimiz hizmetle edindiğimiz pazar liderliğini, aynı güven ve güçle şimdi sigorta sektörüne taşıyoruz.",
+    title: "Özkaraaslan Güvencesi", 
+    desc: "Özkaraaslan Filo Akaryakıt ve Acentelik tecrübemizle, yıllara dayanan güveni sigorta sektörüne taşıyoruz. Grup şirketlerimiz: info@ozkaraaslan.com.tr | info@enmobil.com.tr",
     img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1974&auto=format&fit=crop"
   },
   { 

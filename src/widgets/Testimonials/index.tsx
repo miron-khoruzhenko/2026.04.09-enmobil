@@ -119,6 +119,8 @@ export const Testimonials = () => {
 
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
         
+        <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight">Müşteri Deneyimi</h2>
+        
         <Quote className="w-16 h-16 text-brand-red mb-8 opacity-50" />
         
         <div className="min-h-[160px] flex items-center justify-center">
@@ -154,6 +156,13 @@ export const Testimonials = () => {
             <ChevronRight className="w-5 h-5" />
           </button>
         </div>
+
+        <button 
+          onClick={() => alert("Deneyiminiz başarıyla gönderildi, teşekkür ederiz!")}
+          className="mt-12 px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-full font-medium transition-all backdrop-blur-sm shadow-xl"
+        >
+          Deneyiminizi Paylaşın
+        </button>
 
       </div>
     </section>

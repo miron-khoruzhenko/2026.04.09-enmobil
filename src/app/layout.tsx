@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Preloader } from "@/shared/components/Preloader";
 import { CookieBanner } from "@/shared/components/CookieBanner";
+import { ChatWidget } from "@/shared/components/ChatWidget";
 import { SITE_CONFIG } from "@/shared/config";
 
 const roboto = Roboto({
@@ -62,6 +63,7 @@ export default function RootLayout({
         <Preloader />
         {children}
         <CookieBanner />
+        <ChatWidget />
       </body>
     </html>
   );
