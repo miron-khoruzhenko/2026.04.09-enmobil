@@ -25,9 +25,9 @@ export default function Home() {
     <>
       <Header />
       <main className="flex-1">
-        <QuoteForm />
-        <NedenBiz />
         <Products />
+        <NedenBiz />
+        <QuoteForm />
         <Testimonials />
         <Partners />
         <FAQ />

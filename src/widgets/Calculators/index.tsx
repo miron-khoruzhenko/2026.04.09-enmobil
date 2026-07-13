@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Calculator, CalculatorIcon, Landmark, PiggyBank, ReceiptText } from "lucide-react";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,9 +52,9 @@ export const Calculators = () => {
               Karar vermeden önce size en uygun finansal tabloyu çıkartın. Hesaplama araçlarımızla bütçenizi kontrol altına alın.
             </p>
           </div>
-          <a href="/#iletisim" className="text-brand-dark font-semibold hover:text-brand-red transition-colors hidden md:block">
+          <Link href="/#iletisim" className="text-brand-dark font-semibold hover:text-brand-red transition-colors hidden md:block">
             Uzmanla Görüş &rarr;
-          </a>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

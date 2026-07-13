@@ -5,16 +5,21 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const brands = [
-  { id: 1, name: "Allianz Sigorta" },
-  { id: 2, name: "Anadolu Sigorta" },
-  { id: 3, name: "Axa Sigorta" },
-  { id: 4, name: "Sompo Sigorta" },
-  { id: 5, name: "Mapfre Sigorta" },
-  { id: 6, name: "Türkiye Sigorta" },
-  { id: 7, name: "Ak Sigorta" },
-  { id: 8, name: "Neova Sigorta" },
-  { id: 9, name: "Doğa Sigorta" },
-  { id: 10, name: "HDI Sigorta" },
+  { id: 1, name: "Anadolu Sigorta", image: "/partners/anadolu.png" },
+  { id: 2, name: "Ankara Sigorta", image: "/partners/ankarasigorta.png" },
+  { id: 3, name: "Atlas Sigorta", image: "/partners/Atlas.png" },
+  { id: 4, name: "Hepiyi Sigorta", image: "/partners/Hepiyi.png" },
+  { id: 5, name: "Doğa Sigorta", image: "/partners/doga.png" },
+  { id: 6, name: "Quick Sigorta", image: "/partners/Quick.png" },
+  { id: 7, name: "Corpus Sigorta", image: "/partners/Corpus.png" },
+  { id: 8, name: "Orient Sigorta", image: "/partners/Orient.png" },
+  { id: 9, name: "HDI Sigorta", image: "/partners/HDİ.png" },
+  { id: 10, name: "GIG Sigorta", image: "/partners/GIG.png" },
+  { id: 11, name: "Sompo Sigorta", image: "/partners/Sompo.png" },
+  { id: 12, name: "Ray Sigorta", image: "/partners/Ray.webp" },
+  { id: 13, name: "Koru Sigorta", image: "/partners/Koru.png" },
+  { id: 14, name: "Ak Sigorta", image: "/partners/ak.png" },
+  { id: 15, name: "Türkiye Sigorta", image: "/partners/Türkiye.png" },
 ];
 
 export const Partners = () => {
@@ -65,9 +70,18 @@ export const Partners = () => {
           {[...brands, ...brands].map((brand, i) => (
             <div 
               key={`${brand.id}-${i}`} 
-              className="px-12 py-6 mx-4 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center min-w-[250px] shadow-sm hover:shadow-md hover:border-brand-red/30 transition-all duration-300 cursor-pointer group"
+              className="px-6 py-4 mx-4 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center w-[200px] h-[100px] shadow-sm hover:shadow-md hover:border-brand-red/30 transition-all duration-300 cursor-pointer group"
             >
-              <div className="text-xl font-bold text-gray-400 group-hover:text-brand-dark transition-colors">
+              <img 
+                src={brand.image} 
+                alt={brand.name} 
+                className="max-w-[140px] max-h-[60px] object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                }}
+              />
+              <div className="hidden text-base font-bold text-gray-400 group-hover:text-brand-dark transition-colors text-center whitespace-normal leading-tight">
                 {brand.name}
               </div>
             </div>

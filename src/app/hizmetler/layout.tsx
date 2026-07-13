@@ -152,7 +152,7 @@ export default function HizmetlerLayout({ children }: { children: ReactNode }) {
                     <input type="checkbox" id="kvkk-hizmet" className="mt-1 w-4 h-4 rounded border-gray-300 text-[#D71D24] shrink-0" />
                     <label htmlFor="kvkk-hizmet" className="text-xs text-gray-500 leading-relaxed cursor-pointer">
                       Kişisel verilerimin işlenmesine ilişkin{" "}
-                      <a href="#" className="text-[#D71D24] underline">KVKK Aydınlatma Metni&apos;ni</a> okudum ve kabul ediyorum.
+                      <Link href="#" className="text-[#D71D24] underline">KVKK Aydınlatma Metni&apos;ni</Link> okudum ve kabul ediyorum.
                     </label>
                   </div>
                   <button

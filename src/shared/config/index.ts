@@ -17,5 +17,7 @@ export const SITE_CONFIG = {
     instagram: "https://instagram.com/enmobilsigorta",
     linkedin: "https://linkedin.com/company/enmobilsigorta",
     facebook: "https://facebook.com/enmobilsigorta",
+    twitter: "https://twitter.com/enmobilsigorta",
+    youtube: "https://www.youtube.com/@EnmobilSigorta/videos",
   }
 };

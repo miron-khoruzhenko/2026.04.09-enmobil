@@ -5,6 +5,7 @@ import { Button } from "@/shared/components/Button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ShieldCheck, TrendingUp, Users } from "lucide-react";
+import Link from "next/link";
 
 export const Hero = () => {
   const containerRef = useRef<HTMLElement>(null);
@@ -70,16 +71,16 @@ export const Hero = () => {
             35 yıllık deneyimimizle, ihtiyaçlarınıza en uygun sigorta çözümlerini anında listeleyin, dakikalar içinde poliçenizi oluşturun.
           </p>
           <div className="hero-stagger flex flex-col sm:flex-row gap-4">
-            <a href="#teklif-al">
+            <Link href="/#teklif-al">
               <Button className="text-lg px-8 py-4 hero-stagger w-full cursor-pointer sm:w-auto">
                 Hemen Teklif Al
               </Button>
-            </a>
-            <a href="#urunler">
+            </Link>
+            <Link href="/#urunler">
               <Button variant="outline" className="text-lg px-8 py-4 hero-stagger w-full cursor-pointer sm:w-auto">
                 Ürünleri İncele
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -108,12 +109,12 @@ export const Hero = () => {
                   <h3 className="text-2xl font-bold mb-2">Kurumsal Çözümler</h3>
                   <p className="text-gray-400 text-sm">İşletmeniz için en kapsamlı risk yönetimi.</p>
                 </div>
-                <a
-                  href="#urunler"
+                <Link
+                  href="/#urunler"
                   className="w-14 h-14 rounded-full border border-gray-500/50 flex items-center justify-center group-hover:scale-110 group-hover:border-white/80 transition-all duration-300"
                 >
                   <span className="font-light text-xl">&rarr;</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
