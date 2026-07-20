@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
-import { ShieldCheck, Car, Home, Plane, HeartPulse, Stethoscope, PawPrint, FileBadge } from "lucide-react";
+import { ShieldCheck, Car, Home, Plane, HeartPulse, Stethoscope, PawPrint, FileBadge, Briefcase, Truck, CarFront } from "lucide-react";
 import { cn } from "@/shared/lib/utils";
 import { SITE_CONFIG } from "@/shared/config";
 import Link from "next/link";
@@ -14,15 +14,16 @@ import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 const TABS = [
-  { id: "kasko", label: "Kasko", icon: <Car className="w-5 h-5" />, message: "Aracınızı güvence altına alın, yola içiniz rahat çıkın." },
   { id: "trafik", label: "Trafik", icon: <ShieldCheck className="w-5 h-5" />, message: "Zorunlulukları kolaylaştırmak için Enmobil Sigorta!" },
+  { id: "kasko", label: "Kasko", icon: <Car className="w-5 h-5" />, message: "Aracınızı güvence altına alın, yola içiniz rahat çıkın." },
   { id: "tamamlayici", label: "Tamamlayıcı Sağlık", icon: <Stethoscope className="w-5 h-5" />, message: "Enmobil Sigorta ile hep sağlık olsun!" },
   { id: "ozel", label: "Özel Sağlık", icon: <HeartPulse className="w-5 h-5" />, message: "Size özel fırsatlarla sağlık sigortası yolculuğunuz hemen başlasın!" },
+  { id: "konut", label: "Konut Sigortası", icon: <Home className="w-5 h-5" />, message: "Evinizin sıcaklığı her dem güvencede olsun." },
   { id: "dask", label: "DASK", icon: <Home className="w-5 h-5" />, message: "Zorunlu Deprem Sigortanızı anında ve güvenle yaptırın." },
-  { id: "konut", label: "Konut", icon: <Home className="w-5 h-5" />, message: "Evinizin sıcaklığı her dem güvencede olsun." },
-  { id: "seyahat", label: "Seyahat", icon: <Plane className="w-5 h-5" />, message: "Dünyayı keşfederken sağlığınız bize emanet." },
-  { id: "yabanci", label: "Yabancı Sağlık", icon: <FileBadge className="w-5 h-5" />, message: "Vize ve ikamet işlemleriniz için güvenilir sağlık sigortası." },
-  { id: "pati", label: "Pati", icon: <PawPrint className="w-5 h-5" />, message: "Sevimli dostlarımızın sağlığı da hep güvende olsun." },
+  { id: "isyeri", label: "İş Yeri Sigortası", icon: <Briefcase className="w-5 h-5" />, message: "İşletmenizi tüm risklere karşı koruma altına alın." },
+  { id: "nakliyat", label: "Nakliyat Sigortası", icon: <Truck className="w-5 h-5" />, message: "Yükünüzü güvenle taşıyın, gerisini bize bırakın." },
+  { id: "filo", label: "Filo Araç Sigortaları", icon: <CarFront className="w-5 h-5" />, message: "Şirket araçlarınız için en uygun güvence seçenekleri." },
+  { id: "pati", label: "Pati Sigortası", icon: <PawPrint className="w-5 h-5" />, message: "Sevimli dostlarımızın sağlığı da hep güvende olsun." },
 ];
 
 export const QuoteForm = () => {

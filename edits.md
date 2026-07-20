@@ -8,3 +8,6 @@
 - В секции 'Hızlı ve Güvenilir Sigortacınız' нижняя форма должны открыватся только после нажатия на иконку.
 
 
+## 13.07.2026 - 2 
+- Pati sigortasi yerine de isyeri sigortasi , nakliyat sigortasi ekleyelim
+- site resimlerle zenginleşsin

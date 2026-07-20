@@ -7,7 +7,7 @@ import gsap from "gsap";
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_CONFIG } from "@/shared/config";
-import { Phone, FileText, Heart, Car, Shield, Plane, Home, Map } from "lucide-react";
+import { Phone, FileText, Heart, Car, Shield, Plane, Home, Map, ShieldCheck, Stethoscope, HeartPulse, Briefcase, Truck, CarFront, PawPrint } from "lucide-react";
 
 export const Header = () => {
   const headerRef = useRef<HTMLElement>(null);
@@ -32,13 +32,16 @@ export const Header = () => {
   }, { scope: headerRef });
 
   const categories = [
-    { name: "Yabancı Sağlık", icon: <FileText className="w-4 h-4" /> },
-    { name: "Tamamlayıcı Sağlık", icon: <Heart className="w-4 h-4" /> },
-    { name: "Trafik", icon: <Car className="w-4 h-4" /> },
-    { name: "Kasko", icon: <Shield className="w-4 h-4" /> },
-    { name: "Seyahat Sağlık", icon: <Plane className="w-4 h-4" /> },
-    { name: "Konut", icon: <Home className="w-4 h-4" /> },
-    { name: "DASK", icon: <Map className="w-4 h-4" /> },
+    { name: "Trafik", icon: <ShieldCheck className="w-4 h-4" /> },
+    { name: "Kasko", icon: <Car className="w-4 h-4" /> },
+    { name: "Tamamlayıcı Sağlık", icon: <Stethoscope className="w-4 h-4" /> },
+    { name: "Özel Sağlık", icon: <HeartPulse className="w-4 h-4" /> },
+    { name: "Konut Sigortası", icon: <Home className="w-4 h-4" /> },
+    { name: "DASK", icon: <Home className="w-4 h-4" /> },
+    { name: "İş Yeri Sigortası", icon: <Briefcase className="w-4 h-4" /> },
+    { name: "Nakliyat Sigortası", icon: <Truck className="w-4 h-4" /> },
+    { name: "Filo Araç Sigortaları", icon: <CarFront className="w-4 h-4" /> },
+    { name: "Pati Sigortası", icon: <PawPrint className="w-4 h-4" /> },
   ];
 
   return (

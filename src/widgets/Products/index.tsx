@@ -8,29 +8,29 @@ import Link from "next/link";
 import { 
   CarFront, Car, Stethoscope, HeartPulse, 
   Home, Heart, PlaneTakeoff, FileBadge, 
-  PawPrint, Shield, Search
+  PawPrint, Shield, Search, Briefcase, Truck, Building
 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const products = [
   { 
-    id: 1, href: "/hizmetler/kasko-sigortasi",
-    title: "Kasko", subtitle: "Sigortası",
-    icon: (
-      <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
-        <CarFront className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
-        <Shield className="w-7 h-7 text-brand-red fill-white absolute bottom-0 -right-2" strokeWidth={2} />
-      </div>
-    )
-  },
-  { 
-    id: 2, href: "/hizmetler/trafik-sigortasi",
+    id: 1, href: "/hizmetler/trafik-sigortasi",
     title: "Trafik", subtitle: "Sigortası",
     icon: (
       <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
         <Car className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
         <Car className="w-10 h-10 text-brand-red/80 absolute -top-1 -right-4 -z-10" strokeWidth={1.5} />
+      </div>
+    )
+  },
+  { 
+    id: 2, href: "/hizmetler/kasko-sigortasi",
+    title: "Kasko", subtitle: "Sigortası",
+    icon: (
+      <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
+        <CarFront className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
+        <Shield className="w-7 h-7 text-brand-red fill-white absolute bottom-0 -right-2" strokeWidth={2} />
       </div>
     )
   },
@@ -44,7 +44,7 @@ const products = [
     )
   },
   { 
-    id: 4, href: "/hizmetler/ozel-saglik", // Not created yet, but matches design
+    id: 4, href: "/hizmetler/ozel-saglik",
     title: "Özel", subtitle: "Sağlık",
     icon: (
       <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
@@ -53,17 +53,7 @@ const products = [
     )
   },
   { 
-    id: 5, href: "/hizmetler/dask-konut", // Current slug for DASK, might need separation later, but links here for now
-    title: "DASK", subtitle: "Sigortası",
-    icon: (
-      <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
-        <Home className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
-        <div className="absolute -bottom-2 w-full h-1 bg-brand-red rounded-full" />
-      </div>
-    )
-  },
-  { 
-    id: 6, href: "/hizmetler/konut-sigortasi",
+    id: 5, href: "/hizmetler/konut-sigortasi",
     title: "Konut", subtitle: "Sigortası",
     icon: (
       <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
@@ -73,27 +63,45 @@ const products = [
     )
   },
   { 
-    id: 7, href: "/hizmetler/seyahat-saglik",
-    title: "Seyahat", subtitle: "Sigortası",
+    id: 6, href: "/hizmetler/dask-konut",
+    title: "DASK", subtitle: "Sigortası",
     icon: (
       <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
-        <PlaneTakeoff className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
-        <Heart className="w-6 h-6 text-brand-red absolute bottom-0 right-0 fill-white" strokeWidth={2} />
+        <Home className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
+        <div className="absolute -bottom-2 w-full h-1 bg-brand-red rounded-full" />
       </div>
     )
   },
   { 
-    id: 8, href: "/hizmetler/yabanci-saglik",
-    title: "Yabancı", subtitle: "Sağlık",
+    id: 7, href: "/hizmetler/is-yeri-sigortasi",
+    title: "İş Yeri", subtitle: "Sigortası",
     icon: (
       <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
-        <FileBadge className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
-        <Shield className="w-6 h-6 text-brand-red absolute bottom-0 right-0 fill-white" strokeWidth={2} />
+        <Briefcase className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
       </div>
     )
   },
   { 
-    id: 9, href: "/hizmetler/pati-sigortasi",
+    id: 8, href: "/hizmetler/nakliyat-sigortasi",
+    title: "Nakliyat", subtitle: "Sigortası",
+    icon: (
+      <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
+        <Truck className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
+      </div>
+    )
+  },
+  { 
+    id: 9, href: "/hizmetler/filo-arac-sigortalari",
+    title: "Filo Araç", subtitle: "Sigortaları",
+    icon: (
+      <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
+        <CarFront className="w-12 h-12 text-brand-dark" strokeWidth={1.5} />
+        <CarFront className="w-8 h-8 text-brand-red absolute -top-2 -right-2" strokeWidth={1.5} />
+      </div>
+    )
+  },
+  { 
+    id: 10, href: "/hizmetler/pati-sigortasi",
     title: "Pati", subtitle: "Sigortası",
     icon: (
       <div className="relative w-16 h-16 mb-4 flex items-center justify-center">

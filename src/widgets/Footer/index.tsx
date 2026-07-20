@@ -43,7 +43,7 @@ export const Footer = () => {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="space-y-4">
             <div className="flex flex-col leading-none">
-              <span className="text-2xl font-black tracking-tight text-white">{SITE_CONFIG.siteName.toUpperCase()}</span>
+              <span className="text-2xl font-black tracking-tight text-white">{SITE_CONFIG.siteName.toUpperCase()}</span>2
               <span className="text-xs uppercase font-bold tracking-widest text-brand-red">Sigorta</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
@@ -54,11 +54,16 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Ürünlerimiz</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link href="/hizmetler/kasko-sigortasi" className="hover:text-brand-red transition-colors">Kasko Sigortası</Link></li>
               <li><Link href="/hizmetler/trafik-sigortasi" className="hover:text-brand-red transition-colors">Trafik Sigortası</Link></li>
+              <li><Link href="/hizmetler/kasko-sigortasi" className="hover:text-brand-red transition-colors">Kasko Sigortası</Link></li>
               <li><Link href="/hizmetler/tamamlayici-saglik" className="hover:text-brand-red transition-colors">Tamamlayıcı Sağlık</Link></li>
-              <li><Link href="/hizmetler/dask-konut" className="hover:text-brand-red transition-colors">DASK ve Konut</Link></li>
-              <li><Link href="/hizmetler/seyahat-saglik" className="hover:text-brand-red transition-colors">Seyahat Sağlık</Link></li>
+              <li><Link href="/hizmetler/ozel-saglik" className="hover:text-brand-red transition-colors">Özel Sağlık</Link></li>
+              <li><Link href="/hizmetler/konut-sigortasi" className="hover:text-brand-red transition-colors">Konut Sigortası</Link></li>
+              <li><Link href="/hizmetler/dask-konut" className="hover:text-brand-red transition-colors">DASK</Link></li>
+              <li><Link href="/hizmetler/is-yeri-sigortasi" className="hover:text-brand-red transition-colors">İş Yeri Sigortası</Link></li>
+              <li><Link href="/hizmetler/nakliyat-sigortasi" className="hover:text-brand-red transition-colors">Nakliyat Sigortası</Link></li>
+              <li><Link href="/hizmetler/filo-arac-sigortalari" className="hover:text-brand-red transition-colors">Filo Araç Sigortaları</Link></li>
+              <li><Link href="/hizmetler/pati-sigortasi" className="hover:text-brand-red transition-colors">Pati Sigortası</Link></li>
             </ul>
           </div>
 
